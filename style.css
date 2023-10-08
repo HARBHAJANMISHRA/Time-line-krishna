@@ -1,60 +1,85 @@
-/* Basic styling for the timeline */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+/* Reset default margin and padding */
+body, h1, p {
+  margin: 0;
+  padding: 0;
 }
 
+/* Add styling to the main container */
+#main {
+  position: relative;
+}
+
+/* Style the video */
+video {
+  width: 100%;
+  height: auto;
+}
+
+/* Style the logo */
+#logo h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Style the boxes and containers */
+.box {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.container {
+  position: relative;
+  width: 50%;
+  margin: 20px auto;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.textbox {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Add animation to the boxes */
+.container {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
+}
+
+.container.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Add styles for the timeline */
 .timeline {
-    position: relative;
-    margin: 20px auto;
-    max-width: 800px;
+  position: relative;
+  width: 2px;
+  background-color: #3498db; /* Blue color for the timeline */
+  margin: 0 auto;
+  height: 80%;
 }
 
-.timeline-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 2px solid #ccc;
-    position: relative;
-    background-color: #fff;
-    transition: background-color 0.3s;
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  background-color: #3498db; /* Blue color for timeline dots */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.timeline-item:last-child {
-    border-bottom: none;
+/* Position the timeline dots */
+.timeline-dot:nth-child(even) {
+  left: -8px;
 }
 
-.timeline-item:hover {
-    background-color: #f5f5f5;
+.timeline-dot:nth-child(odd) {
+  right: -8px;
 }
-
-.timeline-content {
-    flex: 1;
-}
-
-.timeline-content h2 {
-    font-size: 24px;
-    margin: 0;
-    color: #333;
-}
-
-.date {
-    font-size: 14px;
-    color: #999;
-    margin-bottom: 10px;
-}
-
-.timeline-content p {
-    margin: 0;
-    color: #555;
-}
-
-.timeline-item img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Add more CSS for carousel, gradient lines, animations, and parallax effects as needed */

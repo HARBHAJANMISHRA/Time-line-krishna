@@ -1,0 +1,60 @@
+/* Basic styling for the timeline */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.timeline {
+    position: relative;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid #ccc;
+    position: relative;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+}
+
+.timeline-item:hover {
+    background-color: #f5f5f5;
+}
+
+.timeline-content {
+    flex: 1;
+}
+
+.timeline-content h2 {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+}
+
+.date {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #555;
+}
+
+.timeline-item img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Add more CSS for carousel, gradient lines, animations, and parallax effects as needed */

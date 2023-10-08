@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna - The Supreme Personality Of Godhead</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        video {
+            object-fit: cover;
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: 0.7;
+        }
+
+        .front-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .front-page-text {
+            text-align: center;
+            font-size: 48px;
+            color: #fff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeIn 4s ease 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .page {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50%;
+        }
+
+        .left,
+        .right {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+            position: relative; /* Add position relative to position the lines */
+        }
+
+        .left h3,
+        .right h3 {
+            font-size: 24px;
+            margin: 0 0 10px;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        .left p,
+        .right p {
+            font-size: 16px;
+            margin: 0;
+            color: #666;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Add class to trigger the animations when scrolled into view */
+        .animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Line styles */
+        .line {
+            position: absolute;
+            width: 3px;
+            background-color: #007bff; /* Change to the desired line color */
+            transition: height 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        /* On hover, fill the line with color */
+        .left:hover .line,
+        .right:hover .line {
+            background-color: #007bff; /* Change to the desired filled line color */
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Front Page with Background Video -->
+    <div class="front-page">
+        <div class="front-page-text">
+            Krishna - The Supreme Personality Of Godhead
+        </div>
+    </div>
+
+    <!-- Second Page with Events -->
+    <div class="page">
+        <!-- Section 1 (Event 3 and Event 4) -->
+        <div class="section">
+            <!-- Event 3 -->
+            <div class="left animate">
+                <h3>Event 3</h3>
+                <p>Details about Event 3 go here.</p>
+                <!-- Line connecting to the right -->
+                <div class="line"></div>
+            </div>
+            <!-- Event 4 -->
+            <div class="right animate">
+                <h3>Event 4</h3>
+                <p>Details about Event 4 go here.</p>
+                <!-- Line connecting to the left -->
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <!-- Section 2 (Background Photos) -->
+        <div class="section">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript to trigger animations when scrolled into view -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const left = document.querySelectorAll('.left');
+            const right = document.querySelectorAll('.right');
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition > 100) {
+                left.forEach((el) => el.classList.add('animate'));
+                right.forEach((el) => el.classList.add('animate'));
+            }
+        });
+    </script>
+</body>
+</html>
